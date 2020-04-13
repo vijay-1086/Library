@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="/css/bootstrap-grid.min.css"></link>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>
+                    Welcome to <%=title%>
+                </h1>
+            </div>
+            <div class="row">
+                <ul class="nav">
+                    <%for(var i=0; i<nav.length; i++) {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%=nav[i].link%>"><%=nav[i].title%></a>
+                        </li>
+                    <%}%>
+                </ul>
+            </div>
+            <div class="row">
+                <ul class="nav flex-column">
+                    <%for(var i=0; i<books.length; i++) {%>
+                        <li class="nav-item">
+                            <!-- <div class="row"> -->
+                                <a class="nav-link" href="/books/<%=books[i]._id%>"><%=books[i].title%></a> 
+                                <span class="badge badge-secondary"><%=books[i].author%></span> 
+                            <!-- </div> -->
+                        </li>
+                    <%}%>
+                </ul>
+            </div>
+        </div>
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+</html>
